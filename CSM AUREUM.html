@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CSM AUREUM</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E4DAC4;--ink:#16223F;--blue:#2851A3;--gold:#A9781A;--card:#EFE8D8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A33;--ink:#EDE5D0;--blue:#7FA2EA;--gold:#D9A94A;--card:#18264A}}
+:root[data-theme="dark"]{--bg:#0F1A33;--ink:#EDE5D0;--blue:#7FA2EA;--gold:#D9A94A;--card:#18264A}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Barlow,"Helvetica Neue",Arial,sans-serif;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stage{--u:min(1vw,1.7778vh);width:calc(var(--u)*100);height:calc(var(--u)*56.25);position:relative}
+.s{position:absolute;inset:0;padding:calc(var(--u)*6) calc(var(--u)*7);display:none;flex-direction:column;justify-content:center}
+.s.on{display:flex}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",Impact,sans-serif;font-weight:800;text-transform:uppercase;margin:0;line-height:.95;color:var(--blue)}
+h1{font-size:calc(var(--u)*17)}
+h2{font-size:calc(var(--u)*8.5);margin-bottom:calc(var(--u)*2.5)}
+h3{font-size:calc(var(--u)*3.6);color:var(--gold)}
+p{font-size:calc(var(--u)*2.1);line-height:1.5;margin:0;max-width:calc(var(--u)*62)}
+.tag{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:calc(var(--u)*2.1);letter-spacing:.14em;text-transform:uppercase;position:absolute;top:calc(var(--u)*3.5);left:calc(var(--u)*7);right:calc(var(--u)*7);display:flex;justify-content:space-between}
+.cover{color:#F3ECDA}.cover .tag{color:#F3ECDA}
+.cover h1{color:#F3ECDA}.cover h1 span{color:#E6B94F}
+.cover p{color:#F3ECDA;margin-top:calc(var(--u)*3)}
+.cols{display:flex;gap:calc(var(--u)*3);margin-top:calc(var(--u)*1.5)}
+.col{flex:1;background:var(--card);border-left:calc(var(--u)*.7) solid var(--blue);padding:calc(var(--u)*2.6) calc(var(--u)*3)}
+.col p{margin-top:calc(var(--u)*1.2);font-size:calc(var(--u)*2.2)}
+.col.g{border-color:var(--gold)}
+.tree{display:flex;flex-direction:column;align-items:center;gap:calc(var(--u)*1.6)}
+.row{display:flex;gap:calc(var(--u)*2);justify-content:center}
+.node{background:var(--card);border-top:calc(var(--u)*.6) solid var(--blue);padding:calc(var(--u)*1.6) calc(var(--u)*3.4);font-family:"Barlow Condensed",sans-serif;font-weight:800;text-transform:uppercase;font-size:calc(var(--u)*3);color:var(--blue);text-align:center}
+.node small{display:block;font-family:Barlow,sans-serif;font-weight:400;text-transform:none;font-size:calc(var(--u)*1.7);color:var(--ink);margin-top:calc(var(--u)*.4)}
+.node.g{border-color:var(--gold);color:var(--gold)}
+.stem{width:calc(var(--u)*.25);height:calc(var(--u)*2);background:var(--ink);opacity:.5;margin:calc(var(--u)*-1) 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*2);margin-top:calc(var(--u)*1.5)}
+.grid .node{font-size:calc(var(--u)*2.7);padding:calc(var(--u)*2.4) calc(var(--u)*2)}
+.nav{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);right:18px;display:flex;gap:8px;z-index:5}
+.nav button{font:600 14px "Barlow Condensed",sans-serif;letter-spacing:.1em;background:var(--blue);color:#fff;border:0;padding:8px 14px;cursor:pointer}
+.nav button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cnt{position:fixed;bottom:calc(env(safe-area-inset-bottom,0px) + 22px);left:18px;font:600 13px "Barlow Condensed",sans-serif;letter-spacing:.14em;color:var(--ink);opacity:.7}
+.cover~.x{display:none}
+.sm h2{font-size:calc(var(--u)*6.5);margin-bottom:calc(var(--u)*1.5)}
+.sm .col{padding:calc(var(--u)*2) calc(var(--u)*2.4)}
+.sm h3{font-size:calc(var(--u)*3.1);margin-bottom:calc(var(--u)*1)}
+ul{margin:0;padding-left:calc(var(--u)*2);font-size:calc(var(--u)*1.9);line-height:1.4}
+li{margin-bottom:calc(var(--u)*.7)}
+.sm.t ul{font-size:calc(var(--u)*1.65)}
+.sm.t li{margin-bottom:calc(var(--u)*.5)}
+</style>
+</head>
+<body>
+<div class="stage" id="st">
+
+<section class="s cover on">
+<div class="tag" style="color:#F3ECDA"><span>The City School</span><span>Annual Event</span></div>
+<h1>CSM<br><span>AUREUM</span></h1>
+<p>A day of learning, competing and creating, followed by an evening everyone will remember.</p>
+</section>
+
+<section class="s">
+<div class="tag"><span>CSM Aureum</span><span>The Event</span></div>
+<h2>One day, two halves</h2>
+<div class="cols">
+<div class="col"><h3>By day</h3><p>Five modules that mix fun with real learning. Delegates investigate, pitch, reason, negotiate and perform, and collect points as they go.</p></div>
+<div class="col g"><h3>By night</h3><p>A social evening, planned as a concert, where all delegates come together after a full day of competition.</p></div>
+</div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>Crime and Investigation</h2>
+<p>Delegates are handed a mystery and a trail of clues. The task is to piece it together and reach a verdict, or solve the case outright.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>A mystery is issued and teams work through the clues to reach a conclusion.</p></div><div class="col g"><h3>Round 2</h3><p>A second case for the teams that move forward, where sharper reasoning decides the outcome.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>Shark Tank</h2>
+<p>Teams receive a theme, a short clock and limited resources. They build a business model and present it to a panel that awards points.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>Prepare and pitch a business model to the panel. The highest scoring teams are shortlisted.</p></div><div class="col g"><h3>Round 2</h3><p>The same format with even less time and fewer resources, against tougher competition.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>The Galileo Summit</h2>
+<p>A test of knowledge and nerve, where every choice carries a risk.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>Choose between easy questions worth fewer points or difficult ones that pay more.</p></div><div class="col g"><h3>Round 2</h3><p>Guess the word from one-word hints. Some wrong guesses will cost you points.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>The Keynesian Gambit</h2>
+<p>Economics meets invention. Delegates sell, bid and build.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>Pitch a randomly assigned item to a panel of judges.</p></div><div class="col g"><h3>Round 2</h3><p>Bid in an auction for technologies and materials, then create an invention from what you win.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>Pangea's Ecosystem</h2>
+<p>Delegates act as decision makers who have to do the most good with the least.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>Solve a series of crises using limited resources and a fixed budget.</p></div><div class="col g"><h3>Round 2</h3><p>Allocate a limited budget to aid a disaster-hit region.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Points</span><span>Day programme</span></div>
+<h2>The Shop</h2>
+<div class="cols">
+<div class="col"><h3>Earn</h3><p>Every score in every module turns into points for the delegation.</p></div>
+<div class="col g"><h3>Spend</h3><p>Points buy perks that help in other modules, or even a re-entry into an ongoing module a delegate has already completed.</p></div>
+<div class="col"><h3>Check</h3><p>Each delegation's balance can be viewed and used in the designated shop room.</p></div>
+</div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Module</span><span>Day programme</span></div>
+<h2>Talent Show</h2>
+<p>A performance, a monologue, a song or anything else. Participants prepare their own act and present it to a panel.</p>
+<div class="cols"><div class="col"><h3>Round 1</h3><p>The panel watches every act and shortlists those who move on.</p></div><div class="col g"><h3>Round 2</h3><p>The shortlisted performers take the stage again and a winner is chosen.</p></div></div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Alongside</span><span>Day programme</span></div>
+<h2>Side Quests</h2>
+<p>Being eliminated does not end the day. Delegates who exit early can join the e-gaming side quests, win points there and exchange them for refreshments.</p>
+</section>
+
+<section class="s">
+<div class="tag"><span>Evening</span><span>Social night</span></div>
+<h2>Social Night</h2>
+<p>When the competition ends, the evening begins. The day closes with a social night, planned as a concert, so every delegate leaves with a shared memory.</p>
+</section>
+
+<section class="s">
+<div class="tag"><span>Organisation</span><span>Structure</span></div>
+<h2 style="margin-bottom:calc(var(--u)*1.5)">Our team structure</h2>
+<div class="tree">
+<div class="row"><div class="node g">Executive Advisor<small>Reports to school management</small></div><div class="node g">Executive Advisor<small>Supervises the whole event</small></div></div>
+<div class="stem"></div>
+<div class="row"><div class="node">President</div></div>
+<div class="stem"></div>
+<div class="row"><div class="node">Chief Finance Officer<small>Reviews finances across departments</small></div><div class="node">Chief Operating Officer<small>Coordinates between departments</small></div></div>
+<div class="stem"></div>
+<div class="row"><div class="node" style="font-size:calc(var(--u)*2.4)">Department Directors and Co-Directors</div></div>
+</div>
+</section>
+
+<section class="s">
+<div class="tag"><span>Organisation</span><span>Departments</span></div>
+<h2 style="margin-bottom:calc(var(--u)*1)">Departments</h2>
+<p>Each department is led by a Director and a Co-Director, supported by a team of 4 to 10 members depending on need.</p>
+<div class="grid">
+<div class="node">Finance and Logistics</div><div class="node">External Relations<small>Sponsorships and partnerships</small></div><div class="node">Hospitality<small>Internal affairs</small></div>
+<div class="node">Decor</div><div class="node">Media and Graphics</div><div class="node">Marketing and Outreach</div>
+</div>
+</section>
+
+<section class="s sm"><div class="tag"><span>Leadership</span><span>Roles</span></div><h2>Advisors and President</h2><div class="cols"><div class="col"><h3>Executive Advisors</h3><ul><li>Supervise every module and department from planning to the final day</li><li>Guide the President on major decisions and step in on escalated issues</li><li>Report to school management on progress, budget and conduct</li><li>Keep the event in line with school policy, safety and its educational purpose</li></ul></div><div class="col g"><h3>President</h3><ul><li>Leads the organising body and sets the vision for CSM Aureum</li><li>Approves major plans, schedules and partnerships</li><li>Works with the CFO and COO to keep every department aligned</li><li>Resolves conflicts and keeps the team accountable and motivated</li></ul></div></div></section>
+<section class="s sm"><div class="tag"><span>Leadership</span><span>Roles</span></div><h2>Finance and Operations</h2><div class="cols"><div class="col"><h3>Chief Finance Officer</h3><ul><li>Prepares the overall budget and the allocation for each department</li><li>Analyses spending and reviews every department's financial reports</li><li>Approves expenses and tracks sponsorship income</li><li>Flags overspending early and reports to the President and advisors</li></ul></div><div class="col g"><h3>Chief Operating Officer</h3><ul><li>Coordinates all departments so work never overlaps or stalls</li><li>Owns the master timeline and the schedule for the event day</li><li>Meets directors regularly to check progress and remove blockers</li><li>Resolves cross-department issues and keeps modules running smoothly</li></ul></div></div></section>
+<section class="s sm t"><div class="tag"><span>Departments</span><span>Roles</span></div><h2>How each department works</h2><div class="cols"><div class="col"><h3>Director</h3><ul><li>Owns the department's goals, plans and results</li><li>Assigns tasks and sets deadlines</li><li>Reports to the COO, and to the CFO on money matters</li><li>Represents the department in leadership meetings</li></ul></div><div class="col g"><h3>Co-Director</h3><ul><li>Supports the Director and steps in when they are away</li><li>Manages daily work and follows up with the team</li><li>Checks the quality of work before it is submitted</li><li>Acts as the link between the Director and members</li></ul></div><div class="col"><h3>Team Members</h3><ul><li>Four to ten per department, depending on workload</li><li>Carry out assigned tasks to the agreed standard</li><li>Update the Co-Director on progress and challenges</li><li>Support other departments where needed on the day</li></ul></div></div></section>
+<section class="s sm t"><div class="tag"><span>Departments</span><span>Roles</span></div><h2>Department duties, part one</h2><div class="cols"><div class="col"><h3>Finance and Logistics</h3><ul><li>Draft the department budget with the CFO and record every income and expense</li><li>Arrange equipment, materials, transport and venue setup</li><li>Manage supplies for the modules, the shop and the side quests</li></ul></div><div class="col g"><h3>External Relations</h3><ul><li>Identify and approach sponsors and partners</li><li>Handle agreements and communication with outside organisations</li><li>Deliver what was promised to sponsors and thank them afterwards</li></ul></div><div class="col"><h3>Hospitality</h3><ul><li>Welcome and register delegates, guests and judges</li><li>Look after refreshments, seating and the help desk</li><li>Handle internal affairs, including volunteer schedules and welfare</li></ul></div></div></section>
+<section class="s sm t"><div class="tag"><span>Departments</span><span>Roles</span></div><h2>Department duties, part two</h2><div class="cols"><div class="col"><h3>Decor</h3><ul><li>Design the venue theme for each module and the social night</li><li>Build the stage and concert backdrop within budget</li><li>Source materials, set up in time and clear up afterwards</li></ul></div><div class="col g"><h3>Media and Graphics</h3><ul><li>Create the logo, posters and social media graphics</li><li>Photograph and film the day and share live updates</li><li>Prepare slides, certificates and post event content</li></ul></div><div class="col"><h3>Marketing and Outreach</h3><ul><li>Promote CSM Aureum to students and other schools</li><li>Run registrations and delegation sign ups</li><li>Manage social media campaigns and public announcements</li></ul></div></div></section>
+<section class="s cover">
+<h1>Thank<br><span>you</span></h1>
+<p style="color:#F3ECDA;margin-top:calc(var(--u)*3)">CSM AUREUM</p>
+</section>
+
+</div>
+<div class="cnt" id="cnt"></div>
+<div class="nav"><button id="pv" aria-label="Previous slide">PREV</button><button id="nx" aria-label="Next slide">NEXT</button></div>
+<script>
+var S=[].slice.call(document.querySelectorAll('.s')),i=0;
+function go(n){i=Math.max(0,Math.min(S.length-1,n));document.body.style.background=S[Math.max(0,Math.min(S.length-1,i))].classList.contains('cover')?'var(--blue)':'';S.forEach(function(s,k){s.classList.toggle('on',k===i)});document.getElementById('cnt').textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.getElementById('nx').onclick=function(){go(i+1)};
+document.getElementById('pv').onclick=function(){go(i-1)};
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1)});
+var x0=null;document.addEventListener('touchstart',function(e){x0=e.touches[0].clientX});
+document.addEventListener('touchend',function(e){if(x0===null)return;var d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>50)go(i+(d<0?1:-1));x0=null});
+var h=parseInt(location.hash.slice(1),10);go(h?h-1:0);
+</script>
+</body>
+</html>
